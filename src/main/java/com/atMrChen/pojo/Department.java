@@ -1,9 +1,13 @@
 package com.atMrChen.pojo;
 
-public class Department {
+import java.io.Serializable;
+
+public class Department implements Serializable {
     private Integer deptId;
 
     private String deptName;
+
+    private static final long serialVersionUID = 1L;
 
     public Department(Integer deptId, String deptName) {
         this.deptId = deptId;
@@ -11,7 +15,7 @@ public class Department {
     }
 
     public Department() {
-        super();
+
     }
 
     public Integer getDeptId() {
@@ -27,6 +31,19 @@ public class Department {
     }
 
     public void setDeptName(String deptName) {
-        this.deptName = deptName == null ? null : deptName.trim();
+        this.deptName = deptName;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", deptId=").append(deptId);
+        sb.append(", deptName=").append(deptName);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

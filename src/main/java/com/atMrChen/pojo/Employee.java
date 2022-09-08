@@ -1,17 +1,24 @@
 package com.atMrChen.pojo;
 
-public class Employee {
+import java.io.Serializable;
+
+
+public class Employee implements Serializable {
     private Integer empId;
 
     private String empName;
 
-    private String gender;
+    private Integer gender;
 
     private String email;
 
     private Integer dId;
 
-    public Employee(Integer empId, String empName, String gender, String email, Integer dId) {
+    private Department department;
+
+    private static final long serialVersionUID = 1L;
+
+    public Employee(Integer empId, String empName, Integer gender, String email, Integer dId) {
         this.empId = empId;
         this.empName = empName;
         this.gender = gender;
@@ -20,7 +27,7 @@ public class Employee {
     }
 
     public Employee() {
-        super();
+
     }
 
     public Integer getEmpId() {
@@ -36,15 +43,15 @@ public class Employee {
     }
 
     public void setEmpName(String empName) {
-        this.empName = empName == null ? null : empName.trim();
+        this.empName = empName;
     }
 
-    public String getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender == null ? null : gender.trim();
+    public void setGender(Integer gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {
@@ -52,7 +59,7 @@ public class Employee {
     }
 
     public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+        this.email = email;
     }
 
     public Integer getdId() {
@@ -61,5 +68,21 @@ public class Employee {
 
     public void setdId(Integer dId) {
         this.dId = dId;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", empId=").append(empId);
+        sb.append(", empName=").append(empName);
+        sb.append(", gender=").append(gender);
+        sb.append(", email=").append(email);
+        sb.append(", dId=").append(dId);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }
