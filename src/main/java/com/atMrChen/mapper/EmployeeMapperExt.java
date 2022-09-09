@@ -5,8 +5,9 @@ import com.atMrChen.pojo.EmployeeExample;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 @Resource
-public interface EmployeeMapperExt extends DepartmentMapper{
+public interface EmployeeMapperExt extends EmployeeMapper{
     /** 查询满足example条件的员工, 包括所属部门信息 */
     List<Employee> queryByExampleWithDept(EmployeeExample example);
 

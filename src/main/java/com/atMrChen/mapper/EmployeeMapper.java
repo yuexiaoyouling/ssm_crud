@@ -4,7 +4,11 @@ import com.atMrChen.pojo.Employee;
 import com.atMrChen.pojo.EmployeeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
+
+@Resource
 public interface EmployeeMapper {
     long countByExample(EmployeeExample example);
 

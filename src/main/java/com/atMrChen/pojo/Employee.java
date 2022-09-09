@@ -2,7 +2,6 @@ package com.atMrChen.pojo;
 
 import java.io.Serializable;
 
-
 public class Employee implements Serializable {
     private Integer empId;
 
@@ -26,8 +25,16 @@ public class Employee implements Serializable {
         this.dId = dId;
     }
 
-    public Employee() {
+    public Department getDepartment() {
+        return department;
+    }
 
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Employee() {
+        super();
     }
 
     public Integer getEmpId() {

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atMrChen.mapper.EmployeeMapperExt">
-    <cache-ref namespace="com.atMrChen.mapper.EmployeeMapper"/>
+
 
     <!-- Employee的结果映射, 包括对内部的department属性的映射 -->
     <resultMap id="EmpResultMapWithDept" type="com.atMrChen.pojo.Employee"
                extends="com.atMrChen.mapper.EmployeeMapper.BaseResultMap">
         <association property="department" resultMap="com.atMrChen.mapper.DepartmentMapper.BaseResultMap"/>
     </resultMap>
-    <!-- tb_emp表连接查询tb_dept表时, 要展示的字段列表 -->
+    <!-- tbl_emp表连接查询tnl_dept表时, 要展示的字段列表 -->
     <sql id="Emp_With_Dept_Column_list">
         e.emp_id,
         e.emp_name,
@@ -18,7 +20,7 @@
         d.dept_id,
         d.dept_name
     </sql>
-    <!-- tb_emp表的where子句条件 -->
+    <!-- tbl_emp表的where子句条件 -->
     <sql id="Example_Where_Clause">
         <where>
             <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -57,8 +59,8 @@
             distinct
         </if>
         <include refid="Emp_With_Dept_Column_list"/>
-        from tb_emp e
-        left join tb_dept d on e.d_id = d.dept_id
+        from tbl_emp e
+        left join tnl_dept d on e.d_id = d.dept_id
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -70,8 +72,8 @@
     <select id="queryByIdWithDept" parameterType="java.lang.Integer" resultMap="EmpResultMapWithDept">
         select
         <include refid="Emp_With_Dept_Column_list"/>
-        from tb_emp e
-        left join tb_dept d on e.d_id = d.dept_id
+        from tbl_emp e
+        left join tnl_dept d on e.d_id = d.dept_id
         where emp_id = #{empId,jdbcType=INTEGER}
     </select>
 </mapper>

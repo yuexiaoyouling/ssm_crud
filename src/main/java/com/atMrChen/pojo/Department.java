@@ -7,6 +7,8 @@ public class Department implements Serializable {
 
     private String deptName;
 
+
+
     private static final long serialVersionUID = 1L;
 
     public Department(Integer deptId, String deptName) {
@@ -15,7 +17,7 @@ public class Department implements Serializable {
     }
 
     public Department() {
-
+        super();
     }
 
     public Integer getDeptId() {

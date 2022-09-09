@@ -5,6 +5,9 @@ import com.atMrChen.pojo.DepartmentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+import javax.annotation.Resource;
+
+@Resource
 public interface DepartmentMapper {
     long countByExample(DepartmentExample example);
 

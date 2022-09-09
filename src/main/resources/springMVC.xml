@@ -16,25 +16,14 @@
     </context:component-scan>
 
     <!-- 配置Thymeleaf视图解析器 -->
-    <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
-        <property name="order" value="1"/>
-        <property name="characterEncoding" value="UTF-8"/>
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="templateEngine">
-            <bean class="org.thymeleaf.spring5.SpringTemplateEngine">
-                <property name="templateResolver">
-                    <bean class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-
-                        <!-- 视图前缀 -->
-                        <property name="prefix" value="/WEB-INF/views/"/>
-                        <!-- 视图后缀 -->
-                        <property name="suffix" value=".jsp"/>
-                    </bean>
-                </property>
-            </bean>
-        </property>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView"></property>
+        <property name="prefix" value="/WEB-INF/"></property>
+        <property name="suffix" value=".jsp"></property>
+        <property name="order" value="2"></property>
     </bean>
-    <mvc:view-controller path="/" view-name="index"></mvc:view-controller>
+    <mvc:view-controller path="/" view-name="list"></mvc:view-controller>
     <mvc:default-servlet-handler/>
     <!--开启mvc的注解驱动-->
     <mvc:annotation-driven />
