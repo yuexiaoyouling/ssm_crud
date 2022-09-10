@@ -1,26 +1,29 @@
-package com.atMrChen.mapper;
+package com.atMrChen.test;
 
+import com.atMrChen.pojo.Employee;
+import com.atMrChen.service.EmployeeService;
+import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static org.junit.Assert.*;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class EmployeeMapperExtTest {
+public class EmployeeServiceTest {
 
     @Autowired
-    private EmployeeMapperExt employeeMapper;
+    EmployeeService employeeService;
     @Test
-    public void queryByExampleWithDept() {
+    public void getEmps(){
 
-        System.out.println(employeeMapper.queryByIdWithDept(1));
+        PageInfo<Employee> emps = employeeService.getEmps(1, 3);
+        System.out.println(emps);
+
 
     }
 
-    @Test
-    public void queryByIdWithDept() {
-        System.out.println(employeeMapper.queryByExampleWithDept(null));
-    }
 }

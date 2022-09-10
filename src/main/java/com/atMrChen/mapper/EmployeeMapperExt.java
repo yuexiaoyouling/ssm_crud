@@ -2,6 +2,7 @@ package com.atMrChen.mapper;
 
 import com.atMrChen.pojo.Employee;
 import com.atMrChen.pojo.EmployeeExample;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.List;
