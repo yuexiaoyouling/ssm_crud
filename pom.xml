@@ -107,12 +107,14 @@
             <artifactId>c3p0</artifactId>
             <version>0.9.5.3</version>
         </dependency>
-<!--        &lt;!&ndash; 日志 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-classic</artifactId>-->
-<!--            <version>1.2.3</version>-->
-<!--        </dependency>-->
+        <!-- 日志 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+
 
         <!-- ServletAPI -->
         <dependency>
@@ -178,11 +180,6 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>2.0.0</version>
-        </dependency>
         <!-- JSONPObject依赖包-->
         <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
         <!-- JSONObject对象依赖的jar包 开始 -->
@@ -233,7 +230,17 @@
             <artifactId>gson</artifactId>
             <version>2.2.4</version>
         </dependency>
-
+        <!--校验-->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.4.1.Final</version>
+        </dependency>
 
 
 

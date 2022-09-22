@@ -1,14 +1,20 @@
 package com.atMrChen.pojo;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 public class Employee implements Serializable {
     private Integer empId;
-
+    @NotNull(message = "员工姓名不能为空")
+    @Pattern(regexp = "(^[a-zA-Z0-9_-]{3,16}$)|(^[\\u2E80-\\u9FFF]{2,8}$)", message = "姓名格式错误, 必须是2-8位中文, 或3-16字母下划线数字")
     private String empName;
-
+    @Range(min = 1, max = 2, message = "性别只能为男或女")
     private Integer gender;
-
+    @Email(message = "邮箱格式错误")
     private String email;
 
     private Integer dId;

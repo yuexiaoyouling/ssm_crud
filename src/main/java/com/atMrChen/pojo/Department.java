@@ -1,15 +1,17 @@
 package com.atMrChen.pojo;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import java.io.Serializable;
 
 public class Department implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Integer deptId;
 
+    @NotBlank
     private String deptName;
 
-
-
-    private static final long serialVersionUID = 1L;
 
     public Department(Integer deptId, String deptName) {
         this.deptId = deptId;

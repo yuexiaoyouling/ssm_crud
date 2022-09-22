@@ -1,8 +1,5 @@
-package com.atMrChen.test;
+package com.atMrChen.service;
 
-import com.atMrChen.pojo.Employee;
-import com.atMrChen.service.EmployeeService;
-import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +10,12 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class EmployeeServiceTest {
+public class DepartmentServiceTest {
 
     @Autowired
-    EmployeeService employeeService;
+    private DepartmentService departmentService;
     @Test
-    public void getEmps(){
-
-        PageInfo<Employee> emps = employeeService.getEmps(1, 3);
-        System.out.println(emps);
-
-
+    public void getDepts() {
+        System.out.println(departmentService.getDepts());
     }
-
 }

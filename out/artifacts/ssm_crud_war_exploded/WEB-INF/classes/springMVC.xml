@@ -31,7 +31,7 @@
         <property name="converters">
             <list>
                 <!--声明我们自定义的类型转换器-->
-                <bean class="com.atMrChen.converter.MsgToJsonObjectConverter"/>
+                <bean class="com.atMrChen.converter.StringToIntegerListConverter"/>
             </list>
         </property>
     </bean>

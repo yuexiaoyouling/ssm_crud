@@ -15,12 +15,14 @@ public class EmployeeMapperExtTest {
     @Test
     public void queryByExampleWithDept() {
 
-        System.out.println(employeeMapper.queryByIdWithDept(1));
+        employeeMapper.queryByExampleWithDept(null).forEach(employee -> {
+            System.out.println(employee);
+        });
 
     }
 
     @Test
     public void queryByIdWithDept() {
-        System.out.println(employeeMapper.queryByExampleWithDept(null));
+        System.out.println(employeeMapper.queryByIdWithDept(1));
     }
 }
